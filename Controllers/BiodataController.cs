@@ -11,7 +11,7 @@ namespace aplikasi_karyawan.Controllers
     [ApiController]
     public class BiodataController : ControllerBase
     {
-        private BiodataRepository _repo;
+        private IBiodataRepository _repo;
         public BiodataController(KaryawanDbContext dbContext)
         {
             _repo = new BiodataRepository(dbContext);

@@ -8,7 +8,7 @@ namespace aplikasi_karyawan.Repository
     public interface IBiodataRepository
     {
         Task<IEnumerable<BiodataViewModel>> GetAll();
-
+        ResponseResult Pagination(int pageNum, int rows, string search, string orderBy, Sorting sort);
     }
     public class BiodataRepository : IBiodataRepository
     {
@@ -29,7 +29,9 @@ namespace aplikasi_karyawan.Repository
                 Address = o.Address,
                 Dob = o.Dob,
                 MaritalStatus = o.MaritalStatus,
-                Pob = o.Pob
+                Pob = o.Pob,
+                CreateBy = o.CreateBy,
+                CreateDate = o.CreateDate,
             }).ToListAsync();
         }
 
@@ -63,7 +65,9 @@ namespace aplikasi_karyawan.Repository
                             Address = o.Address,
                             Dob = o.Dob,
                             MaritalStatus = o.MaritalStatus,
-                            Pob = o.Pob
+                            Pob = o.Pob,
+                            CreateBy = o.CreateBy,
+                            CreateDate = o.CreateDate,
                         }).ToList();
 
                     _result.Pages = (int)Math.Ceiling((decimal)count / rows);

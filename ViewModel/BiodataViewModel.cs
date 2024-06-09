@@ -1,6 +1,8 @@
-﻿namespace aplikasi_karyawan.ViewModel
+﻿using aplikasi_karyawan.DataModel;
+
+namespace aplikasi_karyawan.ViewModel
 {
-    public class BiodataViewModel
+    public class BiodataViewModel: BaseProperties
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = default!;
